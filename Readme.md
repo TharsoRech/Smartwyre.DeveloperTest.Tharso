@@ -26,3 +26,5 @@ The only specific 'rules' are:
 You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
 
 https://motiff.com/file/qguUcCyqGaaEuJtGfmjtx4j?nodeId=0%3A1&type=design "MergeLabsGuestApp"
+
+Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCeUx0RHxbf1x1ZFRHal5XTnNcUiweQnxTdEBjXn5acXVXQGVfU0V1W0leYw==
