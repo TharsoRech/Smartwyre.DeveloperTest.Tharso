@@ -28,3 +28,5 @@ You are free to use any frameworks/NuGet packages that you see fit. You should p
 https://motiff.com/file/qguUcCyqGaaEuJtGfmjtx4j?nodeId=0%3A1&type=design "MergeLabsGuestApp"
 
 Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCeUx0RHxbf1x1ZFRHal5XTnNcUiweQnxTdEBjXn5acXVXQGVfU0V1W0leYw==
+
+https://docs.google.com/document/d/1u6IBMOjZMX3sd6CcWWc836jKrtsRFcIzK54UbfoKs7A/edit?usp=sharing&usp=embed_facebook
