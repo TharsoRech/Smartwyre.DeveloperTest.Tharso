@@ -30,3 +30,12 @@ https://motiff.com/file/qguUcCyqGaaEuJtGfmjtx4j?nodeId=0%3A1&type=design "MergeL
 Ngo9BigBOggjHTQxAR8/V1JEaF5cXmRCeUx0RHxbf1x1ZFRHal5XTnNcUiweQnxTdEBjXn5acXVXQGVfU0V1W0leYw==
 
 https://docs.google.com/document/d/1u6IBMOjZMX3sd6CcWWc836jKrtsRFcIzK54UbfoKs7A/edit?usp=sharing&usp=embed_facebook
+
+
+Our infrastructure is completely running on .NET 9 (soon to be 10). We use Blazor for our front-end, so we are fully using C# across the entire solution 😇
+
+I'm reaching out because we would like to build out our iOS and Android native apps using MAUI. 
+
+This is a multi-stage project, with what could be considered as an "easy" first stage. 
+
+As the first stage, we want to present this information as a native app so that we can also provide in-app alerts: https://www.fullevent.io/customer-booking/019759ee-a857-7379-89e5-d2c892146b3d/agenda
