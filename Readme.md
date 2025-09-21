@@ -1,27 +1,62 @@
-# Smartwyre Developer Test Instructions
+using System.Net.Http.Headers;
+using System.Text;
 
-In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
+using Tke.Gta.Maui.ApiClients.Common;
 
- 1. Lookup the rebate that the request is being made against.
- 2. Lookup the product that the request is being made against.
- 2. Check that the rebate and request are valid to calculate the incentive type rebate.
- 3. Store the rebate calculation.
+namespace Tke.Gta.Maui.ApiClients.Retrofit;
 
-What we'd like you to do is refactor the code with the following things in mind:
+public abstract class ApiClientBase(IRetrofitApiBaseUrlConfiguration configuration) : IApiClient
+{
+    private string _bearerToken;
+    private int _statusCode;
 
- - Adherence to SOLID principles
- - Testability
- - Readability
- - Currently there are 3 known incentive types. In the future the business will want to add many more incentive types. Your solution should make it easy for developers to add new incentive types in the future.
+    public void UseBearerToken(string token)
+    {
+        _bearerToken = token;
+    }
 
-We’d also like you to 
- - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
- - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs
+    protected Task<HttpRequestMessage> CreateHttpRequestMessageAsync(CancellationToken cancellationToken)
+    {
+        HttpRequestMessage request = new();
 
-The only specific 'rules' are:
+        if (_bearerToken != null)
+        {
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _bearerToken);
+        }
 
-- The solution should build
-- The tests should all pass
+        return Task.FromResult(request);
+    }
 
-You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
+    protected Task ProcessResponseAsync(HttpClient client, HttpResponseMessage response,
+        CancellationToken cancellationToken)
+    {
+        _statusCode = (int)response.StatusCode;
+        return Task.CompletedTask;
+    }
 
+    protected Task PrepareRequestAsync(HttpClient client, HttpRequestMessage request,
+        StringBuilder url, CancellationToken cancellationToken)
+    {
+        return Task.CompletedTask;
+    }
+
+    protected Task PrepareRequestAsync(
+        HttpClient client,
+        HttpRequestMessage request,
+        string url,
+        CancellationToken cancellationToken)
+    {
+        if (client.BaseAddress == null
+            || !string.Equals(client.BaseAddress.AbsoluteUri, configuration.BaseUrl, StringComparison.OrdinalIgnoreCase))
+        {
+            client.BaseAddress = new Uri(configuration.BaseUrl);
+        }
+
+        return Task.CompletedTask;
+    }
+
+    public int GetStatusCode()
+    {
+        return _statusCode;
+    }
+}
