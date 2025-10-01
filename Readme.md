@@ -60,3 +60,15 @@ public abstract class ApiClientBase(IRetrofitApiBaseUrlConfiguration configurati
         return _statusCode;
     }
 }
+
+
+@kibblewhite.mergelabs.io I was doing some researchs on  your issue about Blank screen and I saw a lot of comments that this is a know issue on Iphone 16 and happened with several users, and some people commented that happen sometimes and normally a restart fix.
+
+ I would you like to do some tests here just to sure that is not anything in your phone:
+
+Restart Your iPhone: try a force restart by quickly pressing and releasing the volume up button, then the volume down button, and finally pressing and holding the side button until the Apple logo appears. 
+
+Reset Camera Settings: Go to Settings > Camera > Reset Settings to reset all camera settings to their defaults. 
+
+and also do you have another app that uses camera?
+if there is working fine there?
